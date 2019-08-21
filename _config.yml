@@ -28,8 +28,10 @@ github_username:  jekyll
 # Build settings
 markdown: kramdown
 #theme:  minima 
-theme:  tale
+#theme:  tale
+theme: jekyll-theme-clean-blog
 #remote_theme: benbalter/retlab #chesterhow/tale
+#remote_theme: chesterhow/tale
 
 permalink:  /:year-:month-:day/:title
 paginate:   5

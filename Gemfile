@@ -12,7 +12,8 @@ gem "jekyll", "~> 3.8.6"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 #gem "minima", "~> 2.0"
-gem "tale"
+#gem "tale"
+gem "jekyll-theme-clean-blog"
 
 gem "jekyll-remote-theme"
 gem "jekyll-paginate"
