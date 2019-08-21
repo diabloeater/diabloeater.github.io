@@ -27,7 +27,9 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
-theme:      tale
+theme:      minima #tale
+#remote_theme: benbalter/retlab #chesterhow/tale
+
 permalink:  /:year-:month-:day/:title
 paginate:   5
 
