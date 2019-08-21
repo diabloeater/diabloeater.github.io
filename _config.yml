@@ -27,7 +27,7 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
-theme:      tale
+theme:      jekyll-theme-cayman
 permalink:  /:year-:month-:day/:title
 paginate:   5
 
