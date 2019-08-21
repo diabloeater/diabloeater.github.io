@@ -36,8 +36,9 @@ theme: jekyll-theme-clean-blog
 permalink:  /:year-:month-:day/:title
 paginate:   5
 
-exclude: ['vendor','vendors']
-
+exclude:
+    - vendor/
+    
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
