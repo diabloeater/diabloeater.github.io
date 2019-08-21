@@ -27,12 +27,9 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
-<<<<<<< HEAD
 theme:      minima #tale
 #remote_theme: benbalter/retlab #chesterhow/tale
 
-=======
->>>>>>> 590ce15ab98865213bafefb142c102c110391e4d
 permalink:  /:year-:month-:day/:title
 paginate:   5
 
