@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: 散人簡策 #Your awesome title
 email: your-email@example.com
-description:  "程式開發作為街頭格鬥藝術" #"Minimal Jekyll theme for storytellers"
+description:  "一個街頭格鬥流派coding傭兵之生存紀實" #"Minimal Jekyll theme for storytellers"
 # description: >- # this means to ignore newlines until "baseurl:"
 #   Write an awesome description for your new site here. You can edit this
 #   line in _config.yml. It will appear in your document head meta (for
@@ -44,7 +44,10 @@ theme: jekyll-theme-clean-blog
 permalink:  /:year-:month-:day/:title
 paginate:   5
 
-exclude: ["vendor"]
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -57,3 +60,23 @@ exclude: ["vendor"]
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# title:             Clean Blog
+# email:             your-email@example.com
+# description:       A Blog Theme by Start Bootstrap
+# author:            Start Bootstrap
+# baseurl:           "/startbootstrap-clean-blog-jekyll"
+# url:               "http://blackrockdigital.github.io"
+
+# # Social Profiles
+# twitter_username:  SBootstrap
+# github_username:   BlackrockDigital
+# facebook_username: StartBootstrap
+
+# # Build settings
+# markdown:          kramdown
+# paginate:          5
+# paginate_path:     "/posts/page:num/"
+# plugins:
+#   - jekyll-feed
+#   - jekyll-paginate
