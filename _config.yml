@@ -37,9 +37,10 @@ google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
 markdown: kramdown
 #theme:  minima 
 #theme:  tale
-theme: jekyll-theme-clean-blog
-#remote_theme: benbalter/retlab #chesterhow/tale
-#remote_theme: chesterhow/tale
+#theme: jekyll-theme-clean-blog
+#theme: jekyll-theme-minimal
+#remote_theme: benbalter/retlab 
+remote_theme: chesterhow/tale
 
 permalink:  /:year-:month-:day/:title
 paginate:   5
