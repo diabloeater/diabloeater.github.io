@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="散人簡策" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"鬼面散人"},"description":"一個街頭格鬥流派coding傭兵之生存紀實","name":"散人簡策","@type":"WebSite","url":"http://localhost:4000/","headline":"散人簡策","@context":"http://schema.org"}</script>
+{"author":{"@type":"Person","name":"鬼面散人"},"description":"一個街頭格鬥流派coding傭兵之生存紀實","name":"散人簡策","@type":"WebSite","headline":"散人簡策","url":"http://localhost:4000/","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -46,24 +46,23 @@
       <h2 class="nav-title">散人簡策</h2>
     </a>
     <ul>
-      <li><a href="/about">About</a></li>
-      <li><a href="/">Posts</a></li>
+      <li><a href="/about">關於</a></li>
+      <li><a href="/">文章列表</a></li>
     </ul>
   </div>
 </nav>
 
-
     <main>
       <div class="catalogue">
   
-    <a href="/2019-08-05/welcome-to-jekyll" class="catalogue-item">
+    <a href="/2019-08-20/jekyll-installation-on-macos" class="catalogue-item">
       <div>
-        <time datetime="2019-08-05 21:24:35 +0800" class="catalogue-time">August 05, 2019</time>
-        <h1 class="catalogue-title">Welcome to Jekyll!</h1>
+        <time datetime="2019-08-20 21:24:35 +0800" class="catalogue-time">August 20, 2019</time>
+        <h1 class="catalogue-title">Jekyll環境安裝 (MacOS)</h1>
         <div class="catalogue-line"></div>
 
         <p>
-          You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways,...
+          時間過得飛快，入行不知不覺已將近10年，踩過無數地雷最後痕跡只留在心中，因此開始認真思考留下紀錄的可能性。基於身於工程師的一點小小浪漫，決定利用 Jekyll 來進行架設。它是一個問世多年的靜態網站生成器，可完全使用markdown語法來撰寫文章內容，最後將網站託管在Github上進行管理。或許不是最好用的，也存在其他更好的選擇，但對於現階段來說足夠矣。 建置流程 由於目前使用的個人電腦是Macbook 12”(MacOS版本10.11.6)，因此參考在MacOS上安裝Jekyll來進行環境建置。實際安裝過程並不順利，遇到的一些問題及排除方式會在本文後續進行說明。 1.安裝完整的Ruby開發環境。要求如下： Ruby版本至少為2.4.0 RubyGems GCC和Make 2.安裝Jekyll和bundler gems： gem install jekyll bundler 3.建立一個新的Jekyll網站： jekyll new myblog 4.到新建好的目錄下： cd myblog 5.使其生成網站以及在本地服務器上運行： bundle exec jekyll serve 6.最後，打開瀏覽器輸入網址以便預覽網站： http：//...
         </p>
 
       </div>
@@ -82,7 +81,7 @@
 
     <footer>
   <span>
-    &copy; <time datetime="2019-08-23 23:26:43 +0800">2019</time> . Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+    &copy; <time datetime="2019-08-26 21:28:20 +0800">2019</time> . Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
   </span>
 </footer>
 

@@ -1,13 +1,226 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-23T23:26:43+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">散人簡策</title><subtitle>一個街頭格鬥流派coding傭兵之生存紀實</subtitle><author><name>鬼面散人</name></author><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/2019-08-05/welcome-to-jekyll" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2019-08-05T21:24:35+08:00</published><updated>2019-08-05T21:24:35+08:00</updated><id>http://localhost:4000/2019-08-05/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2019-08-05/welcome-to-jekyll">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-26T21:28:20+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">散人簡策</title><subtitle>一個街頭格鬥流派coding傭兵之生存紀實</subtitle><author><name>鬼面散人</name></author><entry><title type="html">Jekyll環境安裝 (MacOS)</title><link href="http://localhost:4000/2019-08-20/jekyll-installation-on-macos" rel="alternate" type="text/html" title="Jekyll環境安裝 (MacOS)" /><published>2019-08-20T21:24:35+08:00</published><updated>2019-08-20T21:24:35+08:00</updated><id>http://localhost:4000/2019-08-20/jekyll-installation-on-macos</id><content type="html" xml:base="http://localhost:4000/2019-08-20/jekyll-installation-on-macos">&lt;p&gt;時間過得飛快，入行不知不覺已將近10年，踩過無數地雷最後痕跡只留在心中，因此開始認真思考留下紀錄的可能性。基於身於工程師的一點小小浪漫，決定利用 &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll&lt;/a&gt; 來進行架設。它是一個問世多年的靜態網站生成器，可完全使用markdown語法來撰寫文章內容，最後將網站託管在Github上進行管理。或許不是最好用的，也存在其他更好的選擇，但對於現階段來說足夠矣。&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;h1 id=&quot;建置流程&quot;&gt;建置流程&lt;/h1&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;由於目前使用的個人電腦是Macbook 12”(MacOS版本10.11.6)，因此參考&lt;a href=&quot;https://jekyllrb.com/docs/installation/macos/&quot;&gt;在MacOS上安裝Jekyll&lt;/a&gt;來進行環境建置。實際安裝過程並不順利，遇到的一些問題及排除方式會在本文後續進行說明。&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;1.安裝完整的Ruby開發環境。要求如下：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ruby版本至少為2.4.0&lt;/li&gt;
+  &lt;li&gt;RubyGems&lt;/li&gt;
+  &lt;li&gt;GCC和Make&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>鬼面散人</name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;p&gt;2.安裝Jekyll和bundler gems：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;gem install jekyll bundler&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;3.建立一個新的Jekyll網站：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;jekyll new myblog&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;4.到新建好的目錄下：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;myblog&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;5.使其生成網站以及在本地服務器上運行：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;6.最後，打開瀏覽器輸入網址以便預覽網站：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;http：// localhost：4000&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;安裝途中遇到的問題&quot;&gt;安裝途中遇到的問題&lt;/h1&gt;
+
+&lt;p&gt;首先是安裝Bundler與Jekyll:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;gem install &lt;span class=&quot;nt&quot;&gt;--user-install&lt;/span&gt; bundler jekyll&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;出現如下錯誤:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;ERROR:  Could not find a valid gem &lt;span class=&quot;s1&quot;&gt;'bundler'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&amp;gt;=&lt;/span&gt; 0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, here is why:
+          Unable to download data from https://rubygems.org/ - SSL_connect &lt;span class=&quot;nv&quot;&gt;returned&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1 &lt;span class=&quot;nv&quot;&gt;errno&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0 &lt;span class=&quot;nv&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;SSLv2/v3 &lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;server hello A: tlsv1 alert protocol version &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;https://rubygems.org/latest_specs.4.8.gz&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+ERROR:  Could not find a valid gem &lt;span class=&quot;s1&quot;&gt;'jekyll'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&amp;gt;=&lt;/span&gt; 0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, here is why:
+          Unable to download data from https://rubygems.org/ - SSL_connect &lt;span class=&quot;nv&quot;&gt;returned&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1 &lt;span class=&quot;nv&quot;&gt;errno&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0 &lt;span class=&quot;nv&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;SSLv2/v3 &lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;server hello A: tlsv1 alert protocol version &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;https://rubygems.org/latest_specs.4.8.gz&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+s&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;檢查現有的Ruby版本:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;ruby &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;結果如下:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;ruby 2.0.0p648 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2015-12-16 revision 53162&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;universal.x86_64-darwin15]&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;因為MacOS自帶的Ruby版本過舊，必須先更新至2.4.0以上。&lt;/p&gt;
+
+&lt;p&gt;解決辦法是直接重新安裝Ruby:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;brew install ruby&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;(因為目前暫時沒有使用Ruby開發專案的需求，所以rbenv…嗯，這裡就不折騰了XD)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;安裝結果：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;Updating Homebrew...
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Auto-updated Homebrew!
+Updated 1 tap &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;homebrew/cask&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+No changes to formulae.
+
+Warning: You are using macOS 10.11.
+We &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;and Apple&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;not provide support &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;this old version.
+You will encounter build failures with some formulae.
+Please create pull requests instead of asking &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;help &lt;/span&gt;on Homebrew&lt;span class=&quot;s1&quot;&gt;'s GitHub,
+Discourse, Twitter or IRC. You are responsible for resolving any issues you
+experience, as you are running this old version.
+
+==&amp;gt; Installing dependencies for ruby: automake, libtool, libyaml and readline
+==&amp;gt; Installing ruby dependency: automake
+==&amp;gt; Downloading https://homebrew.bintray.com/bottles/automake-1.16.1_1.el_capita
+==&amp;gt; Downloading from https://akamai.bintray.com/d5/d552844779f0dc4062f27203f7fac
+######################################################################## 100.0%
+==&amp;gt; Pouring automake-1.16.1_1.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/automake/1.16.1_1: 131 files, 3.4MB
+==&amp;gt; Installing ruby dependency: libtool
+==&amp;gt; Downloading https://homebrew.bintray.com/bottles/libtool-2.4.6_1.el_capitan.
+==&amp;gt; Downloading from https://akamai.bintray.com/b7/b7651d0a082e2f103f03ca3a5ed83
+######################################################################## 100.0%
+==&amp;gt; Pouring libtool-2.4.6_1.el_capitan.bottle.tar.gz
+==&amp;gt; Caveats
+In order to prevent conflicts with Apple'&lt;/span&gt;s own libtool we have prepended a &lt;span class=&quot;s2&quot;&gt;&quot;g&quot;&lt;/span&gt;
+so, you have instead: glibtool and glibtoolize.
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Summary
+🍺  /usr/local/Cellar/libtool/2.4.6_1: 70 files, 3.7MB
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Installing ruby dependency: libyaml
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Downloading https://github.com/yaml/libyaml/archive/0.2.2.tar.gz
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Downloading from https://codeload.github.com/yaml/libyaml/tar.gz/0.2.2
+&lt;span class=&quot;c&quot;&gt;######################################################################## 100.0%&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; ./bootstrap
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; ./configure &lt;span class=&quot;nt&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/Cellar/libyaml/0.2.2
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; make install
+🍺  /usr/local/Cellar/libyaml/0.2.2: 9 files, 313.4KB, built &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;37 seconds
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Installing ruby dependency: readline
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Downloading https://ftp.gnu.org/gnu/readline/readline-8.0.tar.gz
+&lt;span class=&quot;c&quot;&gt;######################################################################## 100.0%&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; ./configure &lt;span class=&quot;nt&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/Cellar/readline/8.0.0_1
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; make install
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Caveats
+readline is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides the BSD libedit library, which shadows libreadline.
+In order to prevent conflicts when programs look &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;libreadline we are
+defaulting this GNU Readline installation to keg-only.
+
+For compilers to find readline you may need to &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;:
+  &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;LDFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-L/usr/local/opt/readline/lib&quot;&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CPPFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-I/usr/local/opt/readline/include&quot;&lt;/span&gt;
+
+For pkg-config to find readline you may need to &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;:
+  &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PKG_CONFIG_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/usr/local/opt/readline/lib/pkgconfig&quot;&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Summary
+🍺  /usr/local/Cellar/readline/8.0.0_1: 48 files, 1.5MB, built &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;43 seconds
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Installing ruby
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Downloading https://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.3.tar.xz
+&lt;span class=&quot;c&quot;&gt;######################################################################## 100.0%&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; ./configure &lt;span class=&quot;nt&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/Cellar/ruby/2.6.3 &lt;span class=&quot;nt&quot;&gt;--enable-shared&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--disable-&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; make
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; make install
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Downloading https://rubygems.org/rubygems/rubygems-3.0.3.tgz
+&lt;span class=&quot;c&quot;&gt;######################################################################## 100.0%&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; /usr/local/Cellar/ruby/2.6.3/bin/ruby setup.rb &lt;span class=&quot;nt&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/private/tmp/ruby-20
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Caveats
+By default, binaries installed by gem will be placed into:
+  /usr/local/lib/ruby/gems/2.6.0/bin
+
+You may want to add this to your PATH.
+
+ruby is keg-only, which means it was not symlinked into /usr/local,
+because macOS already provides this software and installing another version &lt;span class=&quot;k&quot;&gt;in
+&lt;/span&gt;parallel can cause all kinds of trouble.
+
+If you need to have ruby first &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;your PATH run:
+  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export PATH=&quot;/usr/local/opt/ruby/bin:$PATH&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bash_profile
+For compilers to find ruby you may need to &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;:
+  &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;LDFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-L/usr/local/opt/ruby/lib&quot;&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CPPFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-I/usr/local/opt/ruby/include&quot;&lt;/span&gt;
+For pkg-config to find ruby you may need to &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;:
+  &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PKG_CONFIG_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/usr/local/opt/ruby/lib/pkgconfig&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Summary
+🍺  /usr/local/Cellar/ruby/2.6.3: 19,374 files, 32.4MB, built &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;6 minutes 46 seconds
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Caveats
+&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; libtool
+In order to prevent conflicts with Apple&lt;span class=&quot;s1&quot;&gt;'s own libtool we have prepended a &quot;g&quot;
+so, you have instead: glibtool and glibtoolize.
+==&amp;gt; readline
+readline is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides the BSD libedit library, which shadows libreadline.
+In order to prevent conflicts when programs look for libreadline we are
+defaulting this GNU Readline installation to keg-only.
+For compilers to find readline you may need to set:
+  export LDFLAGS=&quot;-L/usr/local/opt/readline/lib&quot;
+  export CPPFLAGS=&quot;-I/usr/local/opt/readline/include&quot;
+For pkg-config to find readline you may need to set:
+  export PKG_CONFIG_PATH=&quot;/usr/local/opt/readline/lib/pkgconfig&quot;
+==&amp;gt; ruby
+By default, binaries installed by gem will be placed into:
+  /usr/local/lib/ruby/gems/2.6.0/bin
+You may want to add this to your PATH.
+ruby is keg-only, which means it was not symlinked into /usr/local,
+because macOS already provides this software and installing another version in
+parallel can cause all kinds of trouble.
+If you need to have ruby first in your PATH run:
+  echo '&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/usr/local/opt/ruby/bin:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' &amp;gt;&amp;gt; ~/.bash_profile
+
+For compilers to find ruby you may need to set:
+  export LDFLAGS=&quot;-L/usr/local/opt/ruby/lib&quot;
+  export CPPFLAGS=&quot;-I/usr/local/opt/ruby/include&quot;
+
+For pkg-config to find ruby you may need to set:
+  export PKG_CONFIG_PATH=&quot;/usr/local/opt/ruby/lib/pkgconfig”&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;安裝雖然完成了，但是依照上面的訊息，還需要利用&lt;code&gt;bash_profile&lt;/code&gt;進行額外的設定：&lt;/p&gt;
+
+&lt;p&gt;1.開啟 bash_profile&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;open &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; .bash_profile &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;沒有的話就另外建一個&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;touch .bash_profile&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;2.加入設定&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;LDFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-L/usr/local/opt/readline/lib&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CPPFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-I/usr/local/opt/readline/include&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PKG_CONFIG_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/usr/local/opt/readline/lib/pkgconfig&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;LDFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-L/usr/local/opt/ruby/lib&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CPPFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-I/usr/local/opt/ruby/include&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PKG_CONFIG_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/usr/local/opt/ruby/lib/pkgconfig&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;3.儲存變更設定&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; .bash_profile&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;4.將終端機視窗整個關掉重開，並且再次檢查目前版本。執行結果如下：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;ruby 2.6.3p62 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2019-04-16 revision 67580&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;x86_64-darwin15]&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;升級完成。&lt;/p&gt;
+
+&lt;p&gt;最後，再執行jekyll檢查是否完成安裝：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;jekyll&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;執行結果：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;A subcommand is required. 
+jekyll 3.8.6 &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; Jekyll is a blog-aware, static site generator &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;Ruby&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;嗯…&lt;/p&gt;
+
+&lt;p&gt;總算是大功告成。&lt;/p&gt;
+
+&lt;h1 id=&quot;參考來源&quot;&gt;參考來源&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll 官方網站&lt;/a&gt;&lt;/p&gt;</content><author><name>鬼面散人</name></author><summary type="html">時間過得飛快，入行不知不覺已將近10年，踩過無數地雷最後痕跡只留在心中，因此開始認真思考留下紀錄的可能性。基於身於工程師的一點小小浪漫，決定利用 Jekyll 來進行架設。它是一個問世多年的靜態網站生成器，可完全使用markdown語法來撰寫文章內容，最後將網站託管在Github上進行管理。或許不是最好用的，也存在其他更好的選擇，但對於現階段來說足夠矣。</summary></entry></feed>

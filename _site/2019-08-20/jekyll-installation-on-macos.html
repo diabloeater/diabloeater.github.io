@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Jekyll環境安裝 (MacOS) | 散人簡策</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Jekyll環境安裝 (MacOS)" />
+<meta name="author" content="鬼面散人" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="時間過得飛快，入行不知不覺已將近10年，踩過無數地雷最後痕跡只留在心中，因此開始認真思考留下紀錄的可能性。基於身於工程師的一點小小浪漫，決定利用 Jekyll 來進行架設。它是一個問世多年的靜態網站生成器，可完全使用markdown語法來撰寫文章內容，最後將網站託管在Github上進行管理。或許不是最好用的，也存在其他更好的選擇，但對於現階段來說足夠矣。" />
+<meta property="og:description" content="時間過得飛快，入行不知不覺已將近10年，踩過無數地雷最後痕跡只留在心中，因此開始認真思考留下紀錄的可能性。基於身於工程師的一點小小浪漫，決定利用 Jekyll 來進行架設。它是一個問世多年的靜態網站生成器，可完全使用markdown語法來撰寫文章內容，最後將網站託管在Github上進行管理。或許不是最好用的，也存在其他更好的選擇，但對於現階段來說足夠矣。" />
+<link rel="canonical" href="http://localhost:4000/2019-08-20/jekyll-installation-on-macos" />
+<meta property="og:url" content="http://localhost:4000/2019-08-20/jekyll-installation-on-macos" />
+<meta property="og:site_name" content="散人簡策" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-08-20T21:24:35+08:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019-08-20/jekyll-installation-on-macos"},"author":{"@type":"Person","name":"鬼面散人"},"description":"時間過得飛快，入行不知不覺已將近10年，踩過無數地雷最後痕跡只留在心中，因此開始認真思考留下紀錄的可能性。基於身於工程師的一點小小浪漫，決定利用 Jekyll 來進行架設。它是一個問世多年的靜態網站生成器，可完全使用markdown語法來撰寫文章內容，最後將網站託管在Github上進行管理。或許不是最好用的，也存在其他更好的選擇，但對於現階段來說足夠矣。","@type":"BlogPosting","headline":"Jekyll環境安裝 (MacOS)","dateModified":"2019-08-20T21:24:35+08:00","datePublished":"2019-08-20T21:24:35+08:00","url":"http://localhost:4000/2019-08-20/jekyll-installation-on-macos","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="散人簡策" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/">
+      <h2 class="nav-title">散人簡策</h2>
+    </a>
+    <ul>
+      <li><a href="/about">關於</a></li>
+      <li><a href="/">文章列表</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    
+        鬼面散人
+    
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2019-08-20 21:24:35 +0800">August 20, 2019</time>
+    
+  </div>
+
+  <h1 class="post-title">Jekyll環境安裝 (MacOS)</h1>
+  <div class="post-line"></div>
+
+  <p>時間過得飛快，入行不知不覺已將近10年，踩過無數地雷最後痕跡只留在心中，因此開始認真思考留下紀錄的可能性。基於身於工程師的一點小小浪漫，決定利用 <a href="https://jekyllrb.com/docs/home">Jekyll</a> 來進行架設。它是一個問世多年的靜態網站生成器，可完全使用markdown語法來撰寫文章內容，最後將網站託管在Github上進行管理。或許不是最好用的，也存在其他更好的選擇，但對於現階段來說足夠矣。</p>
+
+<h1 id="建置流程">建置流程</h1>
+
+<p>由於目前使用的個人電腦是Macbook 12”(MacOS版本10.11.6)，因此參考<a href="https://jekyllrb.com/docs/installation/macos/">在MacOS上安裝Jekyll</a>來進行環境建置。實際安裝過程並不順利，遇到的一些問題及排除方式會在本文後續進行說明。</p>
+
+<p>1.安裝完整的Ruby開發環境。要求如下：</p>
+<ul>
+  <li>Ruby版本至少為2.4.0</li>
+  <li>RubyGems</li>
+  <li>GCC和Make</li>
+</ul>
+
+<p>2.安裝Jekyll和bundler gems：</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">gem install jekyll bundler</code></pre></figure>
+
+<p>3.建立一個新的Jekyll網站：</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">jekyll new myblog</code></pre></figure>
+
+<p>4.到新建好的目錄下：</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">cd </span>myblog</code></pre></figure>
+
+<p>5.使其生成網站以及在本地服務器上運行：</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">bundle <span class="nb">exec </span>jekyll serve</code></pre></figure>
+
+<p>6.最後，打開瀏覽器輸入網址以便預覽網站：</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">http：// localhost：4000</code></pre></figure>
+
+<h1 id="安裝途中遇到的問題">安裝途中遇到的問題</h1>
+
+<p>首先是安裝Bundler與Jekyll:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">gem install <span class="nt">--user-install</span> bundler jekyll</code></pre></figure>
+
+<p>出現如下錯誤:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">ERROR:  Could not find a valid gem <span class="s1">'bundler'</span> <span class="o">(&gt;=</span> 0<span class="o">)</span>, here is why:
+          Unable to download data from https://rubygems.org/ - SSL_connect <span class="nv">returned</span><span class="o">=</span>1 <span class="nv">errno</span><span class="o">=</span>0 <span class="nv">state</span><span class="o">=</span>SSLv2/v3 <span class="nb">read </span>server hello A: tlsv1 alert protocol version <span class="o">(</span>https://rubygems.org/latest_specs.4.8.gz<span class="o">)</span>
+
+ERROR:  Could not find a valid gem <span class="s1">'jekyll'</span> <span class="o">(&gt;=</span> 0<span class="o">)</span>, here is why:
+          Unable to download data from https://rubygems.org/ - SSL_connect <span class="nv">returned</span><span class="o">=</span>1 <span class="nv">errno</span><span class="o">=</span>0 <span class="nv">state</span><span class="o">=</span>SSLv2/v3 <span class="nb">read </span>server hello A: tlsv1 alert protocol version <span class="o">(</span>https://rubygems.org/latest_specs.4.8.gz<span class="o">)</span>
+s</code></pre></figure>
+
+<p>檢查現有的Ruby版本:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">ruby <span class="nt">-v</span></code></pre></figure>
+
+<p>結果如下:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">ruby 2.0.0p648 <span class="o">(</span>2015-12-16 revision 53162<span class="o">)</span> <span class="o">[</span>universal.x86_64-darwin15]</code></pre></figure>
+
+<p>因為MacOS自帶的Ruby版本過舊，必須先更新至2.4.0以上。</p>
+
+<p>解決辦法是直接重新安裝Ruby:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">brew install ruby</code></pre></figure>
+
+<p><em>(因為目前暫時沒有使用Ruby開發專案的需求，所以rbenv…嗯，這裡就不折騰了XD)</em></p>
+
+<p>安裝結果：</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">Updating Homebrew...
+<span class="o">==&gt;</span> Auto-updated Homebrew!
+Updated 1 tap <span class="o">(</span>homebrew/cask<span class="o">)</span><span class="nb">.</span>
+No changes to formulae.
+
+Warning: You are using macOS 10.11.
+We <span class="o">(</span>and Apple<span class="o">)</span> <span class="k">do </span>not provide support <span class="k">for </span>this old version.
+You will encounter build failures with some formulae.
+Please create pull requests instead of asking <span class="k">for </span><span class="nb">help </span>on Homebrew<span class="s1">'s GitHub,
+Discourse, Twitter or IRC. You are responsible for resolving any issues you
+experience, as you are running this old version.
+
+==&gt; Installing dependencies for ruby: automake, libtool, libyaml and readline
+==&gt; Installing ruby dependency: automake
+==&gt; Downloading https://homebrew.bintray.com/bottles/automake-1.16.1_1.el_capita
+==&gt; Downloading from https://akamai.bintray.com/d5/d552844779f0dc4062f27203f7fac
+######################################################################## 100.0%
+==&gt; Pouring automake-1.16.1_1.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/automake/1.16.1_1: 131 files, 3.4MB
+==&gt; Installing ruby dependency: libtool
+==&gt; Downloading https://homebrew.bintray.com/bottles/libtool-2.4.6_1.el_capitan.
+==&gt; Downloading from https://akamai.bintray.com/b7/b7651d0a082e2f103f03ca3a5ed83
+######################################################################## 100.0%
+==&gt; Pouring libtool-2.4.6_1.el_capitan.bottle.tar.gz
+==&gt; Caveats
+In order to prevent conflicts with Apple'</span>s own libtool we have prepended a <span class="s2">"g"</span>
+so, you have instead: glibtool and glibtoolize.
+<span class="o">==&gt;</span> Summary
+🍺  /usr/local/Cellar/libtool/2.4.6_1: 70 files, 3.7MB
+<span class="o">==&gt;</span> Installing ruby dependency: libyaml
+<span class="o">==&gt;</span> Downloading https://github.com/yaml/libyaml/archive/0.2.2.tar.gz
+<span class="o">==&gt;</span> Downloading from https://codeload.github.com/yaml/libyaml/tar.gz/0.2.2
+<span class="c">######################################################################## 100.0%</span>
+<span class="o">==&gt;</span> ./bootstrap
+<span class="o">==&gt;</span> ./configure <span class="nt">--prefix</span><span class="o">=</span>/usr/local/Cellar/libyaml/0.2.2
+<span class="o">==&gt;</span> make install
+🍺  /usr/local/Cellar/libyaml/0.2.2: 9 files, 313.4KB, built <span class="k">in </span>37 seconds
+<span class="o">==&gt;</span> Installing ruby dependency: readline
+<span class="o">==&gt;</span> Downloading https://ftp.gnu.org/gnu/readline/readline-8.0.tar.gz
+<span class="c">######################################################################## 100.0%</span>
+<span class="o">==&gt;</span> ./configure <span class="nt">--prefix</span><span class="o">=</span>/usr/local/Cellar/readline/8.0.0_1
+<span class="o">==&gt;</span> make install
+<span class="o">==&gt;</span> Caveats
+readline is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides the BSD libedit library, which shadows libreadline.
+In order to prevent conflicts when programs look <span class="k">for </span>libreadline we are
+defaulting this GNU Readline installation to keg-only.
+
+For compilers to find readline you may need to <span class="nb">set</span>:
+  <span class="nb">export </span><span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">"-L/usr/local/opt/readline/lib"</span>
+  <span class="nb">export </span><span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">"-I/usr/local/opt/readline/include"</span>
+
+For pkg-config to find readline you may need to <span class="nb">set</span>:
+  <span class="nb">export </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span><span class="s2">"/usr/local/opt/readline/lib/pkgconfig"</span>
+
+<span class="o">==&gt;</span> Summary
+🍺  /usr/local/Cellar/readline/8.0.0_1: 48 files, 1.5MB, built <span class="k">in </span>43 seconds
+<span class="o">==&gt;</span> Installing ruby
+<span class="o">==&gt;</span> Downloading https://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.3.tar.xz
+<span class="c">######################################################################## 100.0%</span>
+<span class="o">==&gt;</span> ./configure <span class="nt">--prefix</span><span class="o">=</span>/usr/local/Cellar/ruby/2.6.3 <span class="nt">--enable-shared</span> <span class="nt">--disable-</span>
+<span class="o">==&gt;</span> make
+<span class="o">==&gt;</span> make install
+<span class="o">==&gt;</span> Downloading https://rubygems.org/rubygems/rubygems-3.0.3.tgz
+<span class="c">######################################################################## 100.0%</span>
+<span class="o">==&gt;</span> /usr/local/Cellar/ruby/2.6.3/bin/ruby setup.rb <span class="nt">--prefix</span><span class="o">=</span>/private/tmp/ruby-20
+<span class="o">==&gt;</span> Caveats
+By default, binaries installed by gem will be placed into:
+  /usr/local/lib/ruby/gems/2.6.0/bin
+
+You may want to add this to your PATH.
+
+ruby is keg-only, which means it was not symlinked into /usr/local,
+because macOS already provides this software and installing another version <span class="k">in
+</span>parallel can cause all kinds of trouble.
+
+If you need to have ruby first <span class="k">in </span>your PATH run:
+  <span class="nb">echo</span> <span class="s1">'export PATH="/usr/local/opt/ruby/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.bash_profile
+For compilers to find ruby you may need to <span class="nb">set</span>:
+  <span class="nb">export </span><span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">"-L/usr/local/opt/ruby/lib"</span>
+  <span class="nb">export </span><span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">"-I/usr/local/opt/ruby/include"</span>
+For pkg-config to find ruby you may need to <span class="nb">set</span>:
+  <span class="nb">export </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span><span class="s2">"/usr/local/opt/ruby/lib/pkgconfig"</span>
+<span class="o">==&gt;</span> Summary
+🍺  /usr/local/Cellar/ruby/2.6.3: 19,374 files, 32.4MB, built <span class="k">in </span>6 minutes 46 seconds
+<span class="o">==&gt;</span> Caveats
+<span class="o">==&gt;</span> libtool
+In order to prevent conflicts with Apple<span class="s1">'s own libtool we have prepended a "g"
+so, you have instead: glibtool and glibtoolize.
+==&gt; readline
+readline is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides the BSD libedit library, which shadows libreadline.
+In order to prevent conflicts when programs look for libreadline we are
+defaulting this GNU Readline installation to keg-only.
+For compilers to find readline you may need to set:
+  export LDFLAGS="-L/usr/local/opt/readline/lib"
+  export CPPFLAGS="-I/usr/local/opt/readline/include"
+For pkg-config to find readline you may need to set:
+  export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
+==&gt; ruby
+By default, binaries installed by gem will be placed into:
+  /usr/local/lib/ruby/gems/2.6.0/bin
+You may want to add this to your PATH.
+ruby is keg-only, which means it was not symlinked into /usr/local,
+because macOS already provides this software and installing another version in
+parallel can cause all kinds of trouble.
+If you need to have ruby first in your PATH run:
+  echo '</span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/usr/local/opt/ruby/bin:</span><span class="nv">$PATH</span><span class="s2">"</span><span class="s1">' &gt;&gt; ~/.bash_profile
+
+For compilers to find ruby you may need to set:
+  export LDFLAGS="-L/usr/local/opt/ruby/lib"
+  export CPPFLAGS="-I/usr/local/opt/ruby/include"
+
+For pkg-config to find ruby you may need to set:
+  export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig”</span></code></pre></figure>
+
+<p>安裝雖然完成了，但是依照上面的訊息，還需要利用<code>bash_profile</code>進行額外的設定：</p>
+
+<p>1.開啟 bash_profile</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">open <span class="nt">-e</span> .bash_profile </code></pre></figure>
+
+<p>沒有的話就另外建一個</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">touch .bash_profile</code></pre></figure>
+
+<p>2.加入設定</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">export </span><span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">"-L/usr/local/opt/readline/lib"</span>
+<span class="nb">export </span><span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">"-I/usr/local/opt/readline/include"</span>
+<span class="nb">export </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span><span class="s2">"/usr/local/opt/readline/lib/pkgconfig"</span>
+<span class="nb">export </span><span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">"-L/usr/local/opt/ruby/lib"</span>
+<span class="nb">export </span><span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">"-I/usr/local/opt/ruby/include"</span>
+<span class="nb">export </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span><span class="s2">"/usr/local/opt/ruby/lib/pkgconfig"</span></code></pre></figure>
+
+<p>3.儲存變更設定</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">source</span> .bash_profile</code></pre></figure>
+
+<p>4.將終端機視窗整個關掉重開，並且再次檢查目前版本。執行結果如下：</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">ruby 2.6.3p62 <span class="o">(</span>2019-04-16 revision 67580<span class="o">)</span> <span class="o">[</span>x86_64-darwin15]</code></pre></figure>
+
+<p>升級完成。</p>
+
+<p>最後，再執行jekyll檢查是否完成安裝：</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">jekyll</code></pre></figure>
+
+<p>執行結果：</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">A subcommand is required. 
+jekyll 3.8.6 <span class="nt">--</span> Jekyll is a blog-aware, static site generator <span class="k">in </span>Ruby</code></pre></figure>
+
+<p>嗯…</p>
+
+<p>總算是大功告成。</p>
+
+<h1 id="參考來源">參考來源</h1>
+<p><a href="https://jekyllrb.com/docs/home">Jekyll 官方網站</a></p>
+
+
+
+</div>
+
+<div class="pagination">
+  
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+  <span>
+    &copy; <time datetime="2019-08-26 21:28:20 +0800">2019</time> . Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+  </span>
+</footer>
+
+  </body>
+</html>

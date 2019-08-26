@@ -1,10 +1,10 @@
 ---
 layout: post
+author: 鬼面散人
 title:  "Welcome to Jekyll!"
 date:   2019-08-05 21:24:35 +0800
 categories: jekyll update
 background: '/img/bg-post.jpg'
-author: 鬼面散人
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
