@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-26T21:28:20+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">散人簡策</title><subtitle>一個街頭格鬥流派coding傭兵之生存紀實</subtitle><author><name>鬼面散人</name></author><entry><title type="html">Jekyll環境安裝 (MacOS)</title><link href="http://localhost:4000/2019-08-20/jekyll-installation-on-macos" rel="alternate" type="text/html" title="Jekyll環境安裝 (MacOS)" /><published>2019-08-20T21:24:35+08:00</published><updated>2019-08-20T21:24:35+08:00</updated><id>http://localhost:4000/2019-08-20/jekyll-installation-on-macos</id><content type="html" xml:base="http://localhost:4000/2019-08-20/jekyll-installation-on-macos">&lt;p&gt;時間過得飛快，入行不知不覺已將近10年，踩過無數地雷最後痕跡只留在心中，因此開始認真思考留下紀錄的可能性。基於身於工程師的一點小小浪漫，決定利用 &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll&lt;/a&gt; 來進行架設。它是一個問世多年的靜態網站生成器，可完全使用markdown語法來撰寫文章內容，最後將網站託管在Github上進行管理。或許不是最好用的，也存在其他更好的選擇，但對於現階段來說足夠矣。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-29T23:53:20+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">散人簡策</title><subtitle>一個街頭格鬥流派coding傭兵之生存紀實</subtitle><author><name>鬼面散人</name></author><entry><title type="html">開始使用 Jekyll</title><link href="http://localhost:4000/2019-08-26/jekyll-new-blog" rel="alternate" type="text/html" title="開始使用 Jekyll" /><published>2019-08-26T21:44:12+08:00</published><updated>2019-08-26T21:44:12+08:00</updated><id>http://localhost:4000/2019-08-26/jekyll-new-blog</id><content type="html" xml:base="http://localhost:4000/2019-08-26/jekyll-new-blog">&lt;p&gt;建立一個新的Jekyll網站&lt;code class=&quot;highlighter-rouge&quot;&gt;myblog&lt;/code&gt;：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;jekyll new myblog&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;執行命令：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;打開瀏覽器輸入網址：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;http：// localhost：4000&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;此時會出現預設的文章範本&lt;code class=&quot;highlighter-rouge&quot;&gt;Welcome to Jekyll!&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;範本所在的目錄為&lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt;，我們可以試著修改。文件命名原則&lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt;。副檔名&lt;code class=&quot;highlighter-rouge&quot;&gt;.ext&lt;/code&gt;可以是&lt;code class=&quot;highlighter-rouge&quot;&gt;.markdown&lt;/code&gt;或是縮寫&lt;code class=&quot;highlighter-rouge&quot;&gt;.md&lt;/code&gt;，甚至是&lt;code class=&quot;highlighter-rouge&quot;&gt;.html&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;值得注意的是，&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;在執行期間會在啓動本地端伺服器的同時自動更新&lt;strong&gt;整個網站&lt;/strong&gt;。文章量累積到一定程度的時候勢必會會浮現效能問題。&lt;/p&gt;
+
+&lt;h1 id=&quot;參考來源&quot;&gt;參考來源&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll 官方網站&lt;/a&gt;&lt;/p&gt;</content><author><name>鬼面散人</name></author><summary type="html">建立一個新的Jekyll網站myblog： jekyll new myblog</summary></entry><entry><title type="html">Jekyll環境安裝 (MacOS)</title><link href="http://localhost:4000/2019-08-20/jekyll-installation-on-macos" rel="alternate" type="text/html" title="Jekyll環境安裝 (MacOS)" /><published>2019-08-20T21:24:35+08:00</published><updated>2019-08-20T21:24:35+08:00</updated><id>http://localhost:4000/2019-08-20/jekyll-installation-on-macos</id><content type="html" xml:base="http://localhost:4000/2019-08-20/jekyll-installation-on-macos">&lt;p&gt;時間過得飛快，入行不知不覺已將近10年，踩過無數地雷，最後卻只能殘存少許記憶的塵埃。突然間開始認真思考留下紀錄的可能性，基於身於工程師的一點小小浪漫，決定利用 &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll&lt;/a&gt; 來進行架設。這是一個問世多年的靜態網站生成器，可使用markdown語法來撰寫文章內容，還可以將網站託管在Github上進行管理。或許有其他的好選擇，但對於現階段來說已經夠用。&lt;/p&gt;
 
 &lt;h1 id=&quot;建置流程&quot;&gt;建置流程&lt;/h1&gt;
 
@@ -218,9 +237,7 @@ For pkg-config to find ruby you may need to set:
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;A subcommand is required. 
 jekyll 3.8.6 &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; Jekyll is a blog-aware, static site generator &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;Ruby&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;嗯…&lt;/p&gt;
-
-&lt;p&gt;總算是大功告成。&lt;/p&gt;
+&lt;p&gt;大功告成。&lt;/p&gt;
 
 &lt;h1 id=&quot;參考來源&quot;&gt;參考來源&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll 官方網站&lt;/a&gt;&lt;/p&gt;</content><author><name>鬼面散人</name></author><summary type="html">時間過得飛快，入行不知不覺已將近10年，踩過無數地雷最後痕跡只留在心中，因此開始認真思考留下紀錄的可能性。基於身於工程師的一點小小浪漫，決定利用 Jekyll 來進行架設。它是一個問世多年的靜態網站生成器，可完全使用markdown語法來撰寫文章內容，最後將網站託管在Github上進行管理。或許不是最好用的，也存在其他更好的選擇，但對於現階段來說足夠矣。</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll 官方網站&lt;/a&gt;&lt;/p&gt;</content><author><name>鬼面散人</name></author><summary type="html">時間過得飛快，入行不知不覺已將近10年，踩過無數地雷，最後卻只能殘存少許記憶的塵埃。突然間開始認真思考留下紀錄的可能性，基於身於工程師的一點小小浪漫，決定利用 Jekyll 來進行架設。這是一個問世多年的靜態網站生成器，可使用markdown語法來撰寫文章內容，還可以將網站託管在Github上進行管理。或許有其他的好選擇，但對於現階段來說已經夠用。</summary></entry></feed>

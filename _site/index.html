@@ -55,6 +55,40 @@
     <main>
       <div class="catalogue">
   
+    <a href="/2019-08-26/jekyll-new-blog" class="catalogue-item">
+      <div>
+        <time datetime="2019-08-26 21:44:12 +0800" class="catalogue-time">August 26, 2019</time>
+        <h1 class="catalogue-title">開始使用 Jekyll</h1>
+        <div class="catalogue-line"></div>
+
+        <p>
+          建立一個新的Jekyll網站myblog：
+
+jekyll new myblog
+
+執行命令：
+
+bundle exec jekyll serve
+
+打開瀏覽器輸入網址：
+
+http：// localhost：4000
+
+此時會出現預設的文章範本Welcome to Jekyll!。
+
+範本所在的目錄為_posts，我們可以試著修改。文件命名原則YYYY-MM-DD-name-of-post.ext。副檔名.ext可以是.markdown或是縮寫.md，甚至是.html。
+
+值得注意的是，jekyll serve在執行期間會在啓動本地端伺服器的同時自動更新整個網站。文章量累積到一定程度的時候勢必會會浮現效能問題。
+
+參考來源
+Jekyll 官方網站
+
+
+        </p>
+
+      </div>
+    </a>
+  
     <a href="/2019-08-20/jekyll-installation-on-macos" class="catalogue-item">
       <div>
         <time datetime="2019-08-20 21:24:35 +0800" class="catalogue-time">August 20, 2019</time>
@@ -62,7 +96,7 @@
         <div class="catalogue-line"></div>
 
         <p>
-          時間過得飛快，入行不知不覺已將近10年，踩過無數地雷最後痕跡只留在心中，因此開始認真思考留下紀錄的可能性。基於身於工程師的一點小小浪漫，決定利用 Jekyll 來進行架設。它是一個問世多年的靜態網站生成器，可完全使用markdown語法來撰寫文章內容，最後將網站託管在Github上進行管理。或許不是最好用的，也存在其他更好的選擇，但對於現階段來說足夠矣。 建置流程 由於目前使用的個人電腦是Macbook 12”(MacOS版本10.11.6)，因此參考在MacOS上安裝Jekyll來進行環境建置。實際安裝過程並不順利，遇到的一些問題及排除方式會在本文後續進行說明。 1.安裝完整的Ruby開發環境。要求如下： Ruby版本至少為2.4.0 RubyGems GCC和Make 2.安裝Jekyll和bundler gems： gem install jekyll bundler 3.建立一個新的Jekyll網站： jekyll new myblog 4.到新建好的目錄下： cd myblog 5.使其生成網站以及在本地服務器上運行： bundle exec jekyll serve 6.最後，打開瀏覽器輸入網址以便預覽網站： http：//...
+          時間過得飛快，入行不知不覺已將近10年，踩過無數地雷，最後卻只能殘存少許記憶的塵埃。突然間開始認真思考留下紀錄的可能性，基於身於工程師的一點小小浪漫，決定利用 Jekyll 來進行架設。這是一個問世多年的靜態網站生成器，可使用markdown語法來撰寫文章內容，還可以將網站託管在Github上進行管理。或許有其他的好選擇，但對於現階段來說已經夠用。 建置流程 由於目前使用的個人電腦是Macbook 12”(MacOS版本10.11.6)，因此參考在MacOS上安裝Jekyll來進行環境建置。實際安裝過程並不順利，遇到的一些問題及排除方式會在本文後續進行說明。 1.安裝完整的Ruby開發環境。要求如下： Ruby版本至少為2.4.0 RubyGems GCC和Make 2.安裝Jekyll和bundler gems： gem install jekyll bundler 3.建立一個新的Jekyll網站： jekyll new myblog 4.到新建好的目錄下： cd myblog 5.使其生成網站以及在本地服務器上運行： bundle exec jekyll serve 6.最後，打開瀏覽器輸入網址以便預覽網站： http：//...
         </p>
 
       </div>
@@ -81,7 +115,7 @@
 
     <footer>
   <span>
-    &copy; <time datetime="2019-08-26 21:28:20 +0800">2019</time> . Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+    &copy; <time datetime="2019-08-29 23:53:20 +0800">2019</time> . Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
   </span>
 </footer>
 
