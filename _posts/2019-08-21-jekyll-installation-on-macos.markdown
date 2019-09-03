@@ -6,11 +6,12 @@ categories: jekyll update
 author: "鬼面散人"
 ---
 
-時間過得飛快，入行不知不覺已將近10年，踩過無數地雷，最後卻只能殘存少許記憶的塵埃。突然間開始認真思考留下紀錄的可能性，基於身於工程師的一點小小浪漫，決定利用 [Jekyll][jekyll-docs] 來進行架設。這是一個問世多年的靜態網站生成器，可使用markdown語法來撰寫文章內容，還可以將網站託管在Github上進行管理。或許有其他的好選擇，但對於現階段來說已經夠用。
+時間過得飛快，入行不知不覺已將近10年，踩過無數地雷，卻只留下少許記憶的塵埃。最近開始認真思考留下紀錄的可能性，因此決定利用 [Jekyll][jekyll-docs] 來進行架設。[Jekyll][jekyll-docs]是一個靜態網站生成器，可使用markdown語法來撰寫文章內容，還可以將網站託管在Github上進行管理。
+<!-- 或許有其他的好選擇，但對於現階段來說已經夠用。 -->
 
 # 建置流程
 
-由於目前使用的個人電腦是Macbook 12"(MacOS版本10.11.6)，因此參考[在MacOS上安裝Jekyll](https://jekyllrb.com/docs/installation/macos/)來進行環境建置。實際安裝過程並不順利，遇到的一些問題及排除方式會在本文後續進行說明。
+由於目前使用的個人電腦是Macbook (MacOS版本10.11.6)，因此參考[在MacOS上安裝Jekyll](https://jekyllrb.com/docs/installation/macos/)一文進行環境建置。然而實際安裝卻遇到了一些問題，這個部分將會本文後續進行說明。
 
 1.安裝完整的Ruby開發環境。要求如下：
 - Ruby版本至少為2.4.0
