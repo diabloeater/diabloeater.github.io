@@ -2,12 +2,9 @@
 layout: post
 title: Jekyll環境安裝 (MacOS)
 date:   2019-08-20 21:24:35 +0800
-categories: jekyll update
+categories: Jekyll
 author: "鬼面散人"
 ---
-
-時間過得飛快，入行不知不覺已將近10年，踩過無數地雷，卻只留下少許記憶的塵埃。最近開始認真思考留下紀錄的可能性，因此決定利用 [Jekyll][jekyll-docs] 來進行架設。[Jekyll][jekyll-docs]是一個靜態網站生成器，可使用markdown語法來撰寫文章內容，還可以將網站託管在Github上進行管理。
-<!-- 或許有其他的好選擇，但對於現階段來說已經夠用。 -->
 
 # 建置流程
 
@@ -248,8 +245,6 @@ jekyll 3.8.6 -- Jekyll is a blog-aware, static site generator in Ruby
 {% endhighlight %}
 
 大功告成。
-
-
 
 # 參考來源
 [Jekyll 官方網站][jekyll-docs]

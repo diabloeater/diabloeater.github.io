@@ -2,7 +2,7 @@
 layout: post
 title: 開始使用 Jekyll
 date:   2019-08-26 21:44:12 +0800
-categories: jekyll update
+categories: Jekyll
 author: "鬼面散人"
 ---
 
@@ -29,8 +29,6 @@ http：// localhost：4000
 
 
 值得注意的是，`jekyll serve`在執行期間會在啓動本地端伺服器的同時自動更新**整個網站**。文章量累積到一定程度的時候勢必會會浮現效能問題。
-
-
 
 
 # 參考來源

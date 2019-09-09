@@ -1,4 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-03T23:50:47+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">散人簡策</title><subtitle>這是充滿bug的程式人生紀實</subtitle><author><name>鬼面散人</name></author><entry><title type="html">Kramdown語法範例</title><link href="http://localhost:4000/2019-08-28/jekyll-kramdown-syntax-example" rel="alternate" type="text/html" title="Kramdown語法範例" /><published>2019-08-28T22:49:35+08:00</published><updated>2019-08-28T22:49:35+08:00</updated><id>http://localhost:4000/2019-08-28/jekyll-kramdown-syntax-example</id><content type="html" xml:base="http://localhost:4000/2019-08-28/jekyll-kramdown-syntax-example">&lt;p&gt;Jekyll可以通過修改&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;調整各種網站建置相關的設定，包括使用的markdown解析器，預設為 &lt;a href=&quot;https://kramdown.gettalong.org/&quot;&gt;kramdown&lt;/a&gt;，也可以改成其他常見的的markdown解析器。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-09T21:50:22+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">散人簡策</title><subtitle>這是充滿bug的程式人生紀實</subtitle><author><name>鬼面散人</name></author><entry><title type="html">在PreferenceFragment監聽設定變更</title><link href="http://localhost:4000/2019-09-09/listen-for-preference-changes" rel="alternate" type="text/html" title="在PreferenceFragment監聽設定變更" /><published>2019-09-09T20:13:08+08:00</published><updated>2019-09-09T20:13:08+08:00</updated><id>http://localhost:4000/2019-09-09/listen-for-preference-changes</id><content type="html" xml:base="http://localhost:4000/2019-09-09/listen-for-preference-changes">起初是因為需要在app加入一些簡單的設定功能而開始使用[Preference API][preference-doc]，其實原本在用的是`PreferenceActivity`，但是這樣一來主畫面上方的ActionBar就消失了（愈看愈奇怪XD）。所以想說趁著這次改版順便換成`PreferenceFragment`。沒想到改完之後發現，變更設定後原本會立即執行的功能不work了，於是立刻下了中斷點查看，結果發現變更設定完成後並沒有執行`onSharedPreferenceChanged`方法。
+
+
+## 解決辦法：
+
+覆寫`PreferenceFragment`類別的`onResume()`和`onPause()`方法。在其中分別加入`registerOnSharedPreferenceChangeListener`和`unregisterOnSharedPreferenceChangeListener`以重新註冊及註銷監聽，就可以了。
+
+
+## 示例：
+
+
+{% highlight java %}
+public class CustomPreferenceFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        addPreferencesFromResource(R.xml.preferences);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // 註冊偏好變更監聽器
+        getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+
+    }
+
+    @Override
+    public void onPause() {
+        // 註銷偏好變更監聽器
+        getPreferenceManager().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
+        super.onPause();
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        // TODO: 當偏好發生變更時要執行的動作
+    }
+}
+{% endhighlight %}
+
+
+[preference-doc]: https://developer.android.com/reference/android/preference/Preference.html?hl=zh-tw</content><author><name>鬼面散人</name></author><summary type="html">起初是因為需要在app加入一些簡單的設定功能而開始使用Preference API，其實原本在用的是PreferenceActivity，但是這樣一來主畫面上方的ActionBar就消失了（愈看愈奇怪XD）。所以想說趁著這次改版順便換成PreferenceFragment。沒想到改完之後發現，變更設定後原本會立即執行的功能不work了，於是立刻下了中斷點查看，結果發現變更設定完成後並沒有執行onSharedPreferenceChanged方法。</summary></entry><entry><title type="html">Kramdown語法詳解</title><link href="http://localhost:4000/2019-08-28/jekyll-kramdown-syntax-example" rel="alternate" type="text/html" title="Kramdown語法詳解" /><published>2019-08-28T22:49:35+08:00</published><updated>2019-08-28T22:49:35+08:00</updated><id>http://localhost:4000/2019-08-28/jekyll-kramdown-syntax-example</id><content type="html" xml:base="http://localhost:4000/2019-08-28/jekyll-kramdown-syntax-example">&lt;p&gt;Jekyll可以通過修改&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;調整各種網站建置相關的設定，包括使用的markdown解析器，預設為 &lt;a href=&quot;https://kramdown.gettalong.org/&quot;&gt;kramdown&lt;/a&gt;，也可以改成其他常見的的markdown解析器。&lt;/p&gt;
 
 &lt;p&gt;設定方式：&lt;/p&gt;
 
@@ -6,7 +50,7 @@
 
 &lt;h1 id=&quot;關於kramdown&quot;&gt;關於kramdown&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://kramdown.gettalong.org/&quot;&gt;kramdown&lt;/a&gt;是一個用於解析和轉換Markdown的Ruby函式庫。基於Markdown語法，同時也包含其他Markdown旳功能。雖然不盡然相容於Markdown，但是大多數Markdown文件透過kramdown進行解析時仍然可以正常顯示。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://kramdown.gettalong.org/&quot;&gt;kramdown&lt;/a&gt;是一個用於解析和轉換Markdown的Ruby函式庫。基於Markdown語法，同時也包含其他Markdown旳功能。雖然不盡然相容於Markdown，但是大多數Markdown文件透過kramdown進行解析時仍然可以正常顯示。kramdown文件包含兩種類型的Html元素，分別是區塊級元素（Block-level elements）及Span級元素（Span-level elements）。為了方便說明，本文將分別以區塊元素及行內元素代替。&lt;/p&gt;
 
 &lt;h1 id=&quot;語法&quot;&gt;語法&lt;/h1&gt;
 
@@ -515,9 +559,9 @@ A &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;n
 
 &lt;p&gt;&lt;a href=&quot;https://kramdown.gettalong.org/&quot;&gt;kramdown官網&lt;/a&gt;&lt;/p&gt;
 
-&lt;!-- [kramdown語法說明][jekyll-kramdown-syntax]
+&lt;p&gt;&lt;a href=&quot;https://kramdown.gettalong.org/syntax.html&quot;&gt;kramdown語法說明&lt;/a&gt;&lt;/p&gt;
 
-[Jekyll Markdown選項][jekyll-markdown] --&gt;</content><author><name>鬼面散人</name></author><summary type="html">Jekyll可以通過修改_config.yml調整各種網站建置相關的設定，包括使用的markdown解析器，預設為 kramdown，也可以改成其他常見的的markdown解析器。</summary></entry><entry><title type="html">開始使用 Jekyll</title><link href="http://localhost:4000/2019-08-26/jekyll-new-blog" rel="alternate" type="text/html" title="開始使用 Jekyll" /><published>2019-08-26T21:44:12+08:00</published><updated>2019-08-26T21:44:12+08:00</updated><id>http://localhost:4000/2019-08-26/jekyll-new-blog</id><content type="html" xml:base="http://localhost:4000/2019-08-26/jekyll-new-blog">&lt;p&gt;建立一個新的Jekyll網站&lt;code class=&quot;highlighter-rouge&quot;&gt;myblog&lt;/code&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/configuration/markdown/&quot;&gt;Jekyll Markdown選項&lt;/a&gt;&lt;/p&gt;</content><author><name>鬼面散人</name></author><summary type="html">Jekyll可以通過修改_config.yml調整各種網站建置相關的設定，包括使用的markdown解析器，預設為 kramdown，也可以改成其他常見的的markdown解析器。</summary></entry><entry><title type="html">開始使用 Jekyll</title><link href="http://localhost:4000/2019-08-26/jekyll-new-blog" rel="alternate" type="text/html" title="開始使用 Jekyll" /><published>2019-08-26T21:44:12+08:00</published><updated>2019-08-26T21:44:12+08:00</updated><id>http://localhost:4000/2019-08-26/jekyll-new-blog</id><content type="html" xml:base="http://localhost:4000/2019-08-26/jekyll-new-blog">&lt;p&gt;建立一個新的Jekyll網站&lt;code class=&quot;highlighter-rouge&quot;&gt;myblog&lt;/code&gt;：&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;jekyll new myblog&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -536,10 +580,7 @@ A &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;n
 &lt;p&gt;值得注意的是，&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;在執行期間會在啓動本地端伺服器的同時自動更新&lt;strong&gt;整個網站&lt;/strong&gt;。文章量累積到一定程度的時候勢必會會浮現效能問題。&lt;/p&gt;
 
 &lt;h1 id=&quot;參考來源&quot;&gt;參考來源&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll 官方網站&lt;/a&gt;&lt;/p&gt;</content><author><name>鬼面散人</name></author><summary type="html">建立一個新的Jekyll網站myblog： jekyll new myblog</summary></entry><entry><title type="html">Jekyll環境安裝 (MacOS)</title><link href="http://localhost:4000/2019-08-20/jekyll-installation-on-macos" rel="alternate" type="text/html" title="Jekyll環境安裝 (MacOS)" /><published>2019-08-20T21:24:35+08:00</published><updated>2019-08-20T21:24:35+08:00</updated><id>http://localhost:4000/2019-08-20/jekyll-installation-on-macos</id><content type="html" xml:base="http://localhost:4000/2019-08-20/jekyll-installation-on-macos">&lt;p&gt;時間過得飛快，入行不知不覺已將近10年，踩過無數地雷，卻只留下少許記憶的塵埃。最近開始認真思考留下紀錄的可能性，因此決定利用 &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll&lt;/a&gt; 來進行架設。&lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll&lt;/a&gt;是一個靜態網站生成器，可使用markdown語法來撰寫文章內容，還可以將網站託管在Github上進行管理。
-&lt;!-- 或許有其他的好選擇，但對於現階段來說已經夠用。 --&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;建置流程&quot;&gt;建置流程&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll 官方網站&lt;/a&gt;&lt;/p&gt;</content><author><name>鬼面散人</name></author><summary type="html">建立一個新的Jekyll網站myblog： jekyll new myblog</summary></entry><entry><title type="html">Jekyll環境安裝 (MacOS)</title><link href="http://localhost:4000/2019-08-20/jekyll-installation-on-macos" rel="alternate" type="text/html" title="Jekyll環境安裝 (MacOS)" /><published>2019-08-20T21:24:35+08:00</published><updated>2019-08-20T21:24:35+08:00</updated><id>http://localhost:4000/2019-08-20/jekyll-installation-on-macos</id><content type="html" xml:base="http://localhost:4000/2019-08-20/jekyll-installation-on-macos">&lt;h1 id=&quot;建置流程&quot;&gt;建置流程&lt;/h1&gt;
 
 &lt;p&gt;由於目前使用的個人電腦是Macbook (MacOS版本10.11.6)，因此參考&lt;a href=&quot;https://jekyllrb.com/docs/installation/macos/&quot;&gt;在MacOS上安裝Jekyll&lt;/a&gt;一文進行環境建置。然而實際安裝卻遇到了一些問題，這個部分將會本文後續進行說明。&lt;/p&gt;
 
@@ -760,4 +801,4 @@ jekyll 3.8.6 &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; Jekyll is a blog-a
 &lt;p&gt;大功告成。&lt;/p&gt;
 
 &lt;h1 id=&quot;參考來源&quot;&gt;參考來源&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll 官方網站&lt;/a&gt;&lt;/p&gt;</content><author><name>鬼面散人</name></author><summary type="html">時間過得飛快，入行不知不覺已將近10年，踩過無數地雷，卻只留下少許記憶的塵埃。最近開始認真思考留下紀錄的可能性，因此決定利用 Jekyll 來進行架設。Jekyll是一個靜態網站生成器，可使用markdown語法來撰寫文章內容，還可以將網站託管在Github上進行管理。</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll 官方網站&lt;/a&gt;&lt;/p&gt;</content><author><name>鬼面散人</name></author><summary type="html">建置流程</summary></entry></feed>

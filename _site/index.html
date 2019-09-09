@@ -55,14 +55,27 @@
     <main>
       <div class="catalogue">
   
-    <a href="/2019-08-28/jekyll-kramdown-syntax-example" class="catalogue-item">
+    <a href="/2019-09-09/listen-for-preference-changes" class="catalogue-item">
       <div>
-        <time datetime="2019-08-28 22:49:35 +0800" class="catalogue-time">August 28, 2019</time>
-        <h1 class="catalogue-title">Kramdown語法範例</h1>
+        <time datetime="2019-09-09 20:13:08 +0800" class="catalogue-time">September 09, 2019</time>
+        <h1 class="catalogue-title">在PreferenceFragment監聽設定變更</h1>
         <div class="catalogue-line"></div>
 
         <p>
-          Jekyll可以通過修改_config.yml調整各種網站建置相關的設定，包括使用的markdown解析器，預設為 kramdown，也可以改成其他常見的的markdown解析器。 設定方式： markdown: kramdown 關於kramdown kramdown是一個用於解析和轉換Markdown的Ruby函式庫。基於Markdown語法，同時也包含其他Markdown旳功能。雖然不盡然相容於Markdown，但是大多數Markdown文件透過kramdown進行解析時仍然可以正常顯示。 語法 kramdown支援所有的編碼格式，例如ASCII，UTF-8或ISO-8859-1，輸出結果與來源編碼會是一致的。和Html一樣包含區塊元素與行內元素，同樣的，行內元素只能出現在區塊元素或其他行內元素中。 換行 程式碼區塊替代語法 跳脫字元與特殊字元 標題 列表 表格 分隔線 HTML區塊 注釋 圖片 文字樣式 IAL 1. 換行 可以透過以下方式達到換行的效果： 通過保留空行以進行換行。 使用下列的區塊元素： a abbr acronym b...
+          起初是因為需要在app加入一些簡單的設定功能而開始使用[Preference API][preference-doc]，其實原本在用的是`PreferenceActivity`，但是這樣一來主畫面上方的ActionBar就消失了（愈看愈奇怪XD）。所以想說趁著這次改版順便換成`PreferenceFragment`。沒想到改完之後發現，變更設定後原本會立即執行的功能不work了，於是立刻下了中斷點查看，結果發現變更設定完成後並沒有執行`onSharedPreferenceChanged`方法。 ## 解決辦法： 覆寫`PreferenceFragment`類別的`onResume()`和`onPause()`方法。在其中分別加入`registerOnSharedPreferenceChangeListener`和`unregisterOnSharedPreferenceChangeListener`以重新註冊及註銷監聽，就可以了。 ## 示例： {% highlight java %} public class CustomPreferenceFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener { @Override public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); addPreferencesFromResource(R.xml.preferences); } @Override public...
+        </p>
+
+      </div>
+    </a>
+  
+    <a href="/2019-08-28/jekyll-kramdown-syntax-example" class="catalogue-item">
+      <div>
+        <time datetime="2019-08-28 22:49:35 +0800" class="catalogue-time">August 28, 2019</time>
+        <h1 class="catalogue-title">Kramdown語法詳解</h1>
+        <div class="catalogue-line"></div>
+
+        <p>
+          Jekyll可以通過修改_config.yml調整各種網站建置相關的設定，包括使用的markdown解析器，預設為 kramdown，也可以改成其他常見的的markdown解析器。 設定方式： markdown: kramdown 關於kramdown kramdown是一個用於解析和轉換Markdown的Ruby函式庫。基於Markdown語法，同時也包含其他Markdown旳功能。雖然不盡然相容於Markdown，但是大多數Markdown文件透過kramdown進行解析時仍然可以正常顯示。kramdown文件包含兩種類型的Html元素，分別是區塊級元素（Block-level elements）及Span級元素（Span-level elements）。為了方便說明，本文將分別以區塊元素及行內元素代替。 語法 kramdown支援所有的編碼格式，例如ASCII，UTF-8或ISO-8859-1，輸出結果與來源編碼會是一致的。和Html一樣包含區塊元素與行內元素，同樣的，行內元素只能出現在區塊元素或其他行內元素中。 換行 程式碼區塊替代語法 跳脫字元與特殊字元 標題 列表 表格 分隔線 HTML區塊 注釋 圖片 文字樣式 IAL 1. 換行 可以透過以下方式達到換行的效果： 通過保留空行以進行換行。 使用下列的區塊元素： a abbr...
         </p>
 
       </div>
@@ -109,7 +122,7 @@ Jekyll 官方網站
         <div class="catalogue-line"></div>
 
         <p>
-          時間過得飛快，入行不知不覺已將近10年，踩過無數地雷，卻只留下少許記憶的塵埃。最近開始認真思考留下紀錄的可能性，因此決定利用 Jekyll 來進行架設。Jekyll是一個靜態網站生成器，可使用markdown語法來撰寫文章內容，還可以將網站託管在Github上進行管理。 建置流程 由於目前使用的個人電腦是Macbook (MacOS版本10.11.6)，因此參考在MacOS上安裝Jekyll一文進行環境建置。然而實際安裝卻遇到了一些問題，這個部分將會本文後續進行說明。 1.安裝完整的Ruby開發環境。要求如下： Ruby版本至少為2.4.0 RubyGems GCC和Make 2.安裝Jekyll和bundler gems： gem install jekyll bundler 3.建立一個新的Jekyll網站： jekyll new myblog 4.到新建好的目錄下： cd myblog 5.使其生成網站以及在本地服務器上運行： bundle exec jekyll serve 6.最後，打開瀏覽器輸入網址以便預覽網站： http：//...
+          建置流程 由於目前使用的個人電腦是Macbook (MacOS版本10.11.6)，因此參考在MacOS上安裝Jekyll一文進行環境建置。然而實際安裝卻遇到了一些問題，這個部分將會本文後續進行說明。 1.安裝完整的Ruby開發環境。要求如下： Ruby版本至少為2.4.0 RubyGems GCC和Make 2.安裝Jekyll和bundler gems： gem install jekyll bundler 3.建立一個新的Jekyll網站： jekyll new myblog 4.到新建好的目錄下： cd myblog 5.使其生成網站以及在本地服務器上運行： bundle exec jekyll serve 6.最後，打開瀏覽器輸入網址以便預覽網站： http：// localhost：4000 安裝途中遇到的問題 首先是安裝Bundler與Jekyll:...
         </p>
 
       </div>
@@ -128,7 +141,7 @@ Jekyll 官方網站
 
     <footer>
   <span>
-    &copy; <time datetime="2019-09-03 23:50:47 +0800">2019</time> 鬼面散人. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+    &copy; <time datetime="2019-09-09 21:50:22 +0800">2019</time> 鬼面散人. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
   </span>
 </footer>
   </body>

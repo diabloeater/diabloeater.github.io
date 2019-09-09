@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Kramdown語法範例
+title: Kramdown語法詳解
 date:   2019-08-28 22:49:35 +0800
-categories: jekyll update
+categories: Jekyll markdown kramdown
 author: "鬼面散人"
 ---
 
@@ -17,7 +17,7 @@ markdown: kramdown
 
 # 關於kramdown
 
-[kramdown][kramdown-home]是一個用於解析和轉換Markdown的Ruby函式庫。基於Markdown語法，同時也包含其他Markdown旳功能。雖然不盡然相容於Markdown，但是大多數Markdown文件透過kramdown進行解析時仍然可以正常顯示。
+[kramdown][kramdown-home]是一個用於解析和轉換Markdown的Ruby函式庫。基於Markdown語法，同時也包含其他Markdown旳功能。雖然不盡然相容於Markdown，但是大多數Markdown文件透過kramdown進行解析時仍然可以正常顯示。kramdown文件包含兩種類型的Html元素，分別是區塊級元素（Block-level elements）及Span級元素（Span-level elements）。為了方便說明，本文將分別以區塊元素及行內元素代替。
 
 # 語法
 
@@ -558,9 +558,9 @@ This *is italic*{::}*marked*{:.special} text
 
 [kramdown官網][kramdown-home]
 
-<!-- [kramdown語法說明][jekyll-kramdown-syntax]
+[kramdown語法說明][jekyll-kramdown-syntax]
 
-[Jekyll Markdown選項][jekyll-markdown] -->
+[Jekyll Markdown選項][jekyll-markdown]
 
 [jekyll-markdown]: https://jekyllrb.com/docs/configuration/markdown/
 [jekyll-kramdown-syntax]: https://kramdown.gettalong.org/syntax.html

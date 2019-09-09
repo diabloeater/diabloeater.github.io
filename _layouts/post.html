@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    {% if page.author %}
+        {{ page.author }}
+    {% else %}
+        {{ site.author.name }}
+    {% endif %}
+
+    {% if page.date %}
+      <br>
+      <span>on&nbsp;</span><time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
+    {% endif %}
+  </div>
+
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="post-line"></div>
+
+  {{ content }}
+
+
+
+  <!-- {% for category in site.categories %}
+    {% for c in page.categories %}
+    <h2>{{ c[0] }}</h2>  
+    {% endfor %}
+
+  {% if category[0] == "Jekyll" %}
+    <h2>更多{{ category[0] }}相關文章</h2>
+    <ul>
+      {% for post in category[1] %}
+          {% if post.title != page.title %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% endfor %} -->
+
+
+</div>
+
+<div class="pagination">
+  {% if page.next.url %}
+    <a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
+  {% endif %}
+  {% if page.previous.url %}
+    <a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
+  {% endif %}
+
+  <a href="#" class="top">Top</a>
+</div>
